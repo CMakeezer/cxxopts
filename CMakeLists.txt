@@ -66,7 +66,7 @@ endif()
 
 target_include_directories(cxxopts INTERFACE
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
+    $<INSTALL_INTERFACE:include/cxxopts>
     )
 
 include(CMakePackageConfigHelpers)
@@ -97,7 +97,7 @@ install(EXPORT ${targets_export_name} DESTINATION ${CXXOPTS_CMAKE_DIR}
 
 # Install the header file and export the target
 install(TARGETS cxxopts EXPORT ${targets_export_name} DESTINATION lib)
-install(FILES ${PROJECT_SOURCE_DIR}/include/cxxopts.hpp DESTINATION include)
+install(FILES ${PROJECT_SOURCE_DIR}/include/cxxopts.hpp DESTINATION include/cxxopts)
 
 add_subdirectory(src)
 add_subdirectory(test)
